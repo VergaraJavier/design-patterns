@@ -1,10 +1,14 @@
-
-const saludar = (nombre: string = "mundo")=>{
-    console.log(`Hola ${nombre}!`);
-}
+import {ApplicationSettings} from './application-settings.ts'
 
 const main = ()=>{
-    saludar();
+    const settingsA = ApplicationSettings.getInstance();
+    const settingsB = ApplicationSettings.getInstance();
+
+    if(settingsA==settingsB){
+        console.log('mi singleton funciona');
+    }else{
+        console.log('ups algo fallo');
+    }
 }
 
 main();
