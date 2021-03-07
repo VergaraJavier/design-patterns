@@ -14,3 +14,29 @@ El proyecto esta escrito en Typescript para ser ejecutado con DENO, para ejecuta
 ```
 $ deno run main.ts
 ```
+
+## singleton
+
+imagina que decides crear una clase en tu aplicacion para guardar las preferencias por defecto,  
+una manera de hacerlo seria crear una clase con un construtor vacio, propriedades privadas y  
+solo getters... 
+
+```
+\\pseudo-codigo
+
+public ApplicationSettings{
+    
+    public ApplicationSettings(){}
+
+    private dateFormat = 'dd/MM/yyyy';
+
+    public getDateFormat(){return this.dateFormat;}
+
+}
+```
+
+El unico problema de este enfoque es que cada rutina que quiera consultar los valores de esta clase  
+tendra que generar una instancia propia, la cual en terminos de memoria no es muy eficiente ya que  
+tendremos multiples copias del mismo objeto guardadas en memoria.
+
+Una manera de hacer mas eficiente esta solucion es aplicar es patron Singleton... revisa las fuentes
