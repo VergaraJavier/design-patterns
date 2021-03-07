@@ -14,3 +14,36 @@ El proyecto esta escrito en Typescript para ser ejecutado con DENO, para ejecuta
 ```
 $ deno run main.ts
 ```
+
+## factory method
+
+Imagina que trabajas en una compañia de seguros, y necesitas implementar una funcion para celebrar contratos  
+considera que tenemos solo dos lineas de negocios: seguros de vida y automotrices. Un primer acercamiento podria lucir asi:
+
+```
+public class Aseguradora{
+
+public void celebrarContrato(string tipoProduto){
+    
+    SeguroVida miSeguroVida;
+    SeguroAuto miSeguroAuto;
+
+    if (tipoProduto=="vida"){
+        miSeguroVida = new SeguroVida();
+
+        miSeguroVida.validarContratante();
+        miSeguroVida.firmar();
+        miSeguroVida.activar();
+    }else{
+        miSeguroAuto = new SeguroAuto();
+
+        miSeguroAuto.validarContratante();
+        miSeguroAuto.firmar();
+        miSeguroAuto.activar();
+    }
+}
+}
+```
+
+ya te imaginas como se empesaria a ver esta funcion si tuviesemos 10,20,50 productos ... mejoremos esto con el  
+patron factory, revisa las fuentes de la rama
