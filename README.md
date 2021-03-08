@@ -45,5 +45,5 @@ public void celebrarContrato(string tipoProduto){
 }
 ```
 
-ya te imaginas como se empesaria a ver esta funcion si tuviesemos 10,20,50 productos ... mejoremos esto con el  
+ya te imaginas como se empezaria a ver esta funcion si tuviesemos 10,20,50 productos ... mejoremos esto con el  
 patron factory, revisa las fuentes de la rama
