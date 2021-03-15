@@ -1,17 +1,18 @@
-import {Ventas} from './ventas.ts'
+import {AseguradoraFactory} from './aseguradora-factory.ts'
 import {AseguradoraVidaFactory} from './aseguradora-vida-factory.ts'
 import {AseguradoraAutoFactory} from './aseguradora-auto-factory.ts'
 
 const main = ()=>{
 
-    let comercio:Ventas;
+    let fabrica:AseguradoraFactory;
+
     // contratemos uno de vida
-    comercio = new Ventas(new AseguradoraVidaFactory());   
-    comercio.venderSeguro();
-   
+    fabrica = new AseguradoraVidaFactory();
+    fabrica.celebrarContrato();
+    
     //contratemos uno automotriz
-    comercio = new Ventas(new AseguradoraAutoFactory());   
-    comercio.venderSeguro();
+    fabrica = new AseguradoraAutoFactory();   
+    fabrica.celebrarContrato();
 
 }
 
